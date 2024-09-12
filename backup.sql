@@ -86,12 +86,30 @@ ALTER TABLE public.resturant OWNER TO "saadal-ageel";
 -- Data for Name: menu; Type: TABLE DATA; Schema: public; Owner: saadal-ageel
 --
 
-COPY public.menu (menu_id, calories, category, description, img_url, m_name, price, fk_res_id) FROM stdin;
-8	55	Appatizers	A jordanian hummas contains peas, olive oil, and few arabic herbs	https://cdn.loveandlemons.com/wp-content/uploads/2024/08/hummus-recipe.jpg	Hummas	5	1
-7	1700	Chicken	10 pieces Mosahab, with garlic sauce and fries	https://www.biltafsil.com/wp-content/uploads/2022/07/%D9%85%D8%B3%D8%AD%D8%A8-%D8%A7%D9%84%D8%A8%D9%8A%D9%83.jpg	10 pieces Mosahab	28	1
-6	1078	Chicken	7 pieces Mosahab, with garlic sauce and fries	https://www.biltafsil.com/wp-content/uploads/2022/07/%D9%85%D8%B3%D8%AD%D8%A8-%D8%A7%D9%84%D8%A8%D9%8A%D9%83.jpg	7 pieces Mosahab	16	1
-3	320	Appatizers	Grape leaves stuffed with rice	https://www.simplyleb.com/wp-content/uploads/Vegetarian-Stuffed-Grape-Leaves-20.jpg	Grape leaves	15.99	1
-\.
+--
+-- Insert additional categories and menu items for each restaurant
+--
+
+INSERT INTO public.menu (menu_id, calories, category, description, img_url, m_name, price, fk_res_id) VALUES
+(8, 55, 'Appetizers', 'A Jordanian hummus containing peas, olive oil, and a few Arabic herbs', 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Lebanese_style_hummus.jpg', 'Hummus', 5, 1),
+(7, 1700, 'Chicken', '10 pieces Mosahab, with garlic sauce and fries', 'https://e4a84wdfhho.exactdn.com/wp-content/uploads/2023/07/%D9%85%D9%86%D9%8A%D9%88-%D9%85%D8%B7%D8%B9%D9%85-%D8%A7%D9%84%D8%A8%D9%8A%D9%83-%D8%AD%D8%A7%D8%A6%D9%84.webp?strip=all&lossy=1&resize=1280%2C720&ssl=1', '10 pieces Mosahab', 28, 1),
+(6, 1078, 'Chicken', '7 pieces Mosahab, with garlic sauce and fries', 'https://e4a84wdfhho.exactdn.com/wp-content/uploads/2023/07/%D9%85%D9%86%D9%8A%D9%88-%D9%85%D8%B7%D8%B9%D9%85-%D8%A7%D9%84%D8%A8%D9%8A%D9%83-%D8%AD%D8%A7%D8%A6%D9%84.webp?strip=all&lossy=1&resize=1280%2C720&ssl=1', '7 pieces Mosahab', 16, 1),
+(3, 320, 'Appetizers', 'Grape leaves stuffed with rice', 'https://www.themediterraneandish.com/wp-content/uploads/2019/12/Stuffed-Grape-Leaves-Recipe-Dolmas-15.jpg', 'Grape leaves', 15.99, 1),
+(9, 1600, 'Chicken', 'Grilled chicken shawarma with garlic sauce and pickles', 'https://hips.hearstapps.com/hmg-prod/images/singleimagebug-chicken-shawarma-pin-1549421288.jpg?crop=1.00xw:0.632xh;0,0.220xh&resize=980:*', 'Chicken Shawarma', 12, 1),
+(10, 300, 'Drinks', 'Fresh lemon juice with mint', 'https://forksandfoliage.com/wp-content/uploads/2022/07/lebanese-mint-lemonade-4.jpg', 'Lemon Mint Juice', 3, 1),
+(11, 500, 'Desserts', 'Traditional baklava with honey and nuts', 'https://www.simplyrecipes.com/thmb/GjaB8D6OyVIAfA_BpGuXr-6eNBU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Baklava-LEAD-11-b2a228e6db9f43d697ae3aed378d0b2a.jpg', 'Baklava', 5, 1),
+(20, 1400, 'Chicken', 'Grilled chicken served with garlic sauce and fries', 'https://www.wellplated.com/wp-content/uploads/2021/05/Best-Grilled-Chicken-Breast.jpg', 'Grilled Chicken', 20, 1),
+(21, 1800, 'Chicken', 'Deep-fried chicken nuggets with fries and ketchup', 'https://www.kitchenathoskins.com/wp-content/uploads/2020/09/air-fryer-chicken-nuggets-27-1-1.jpg', 'Chicken Nuggets', 15, 1),
+(12, 200, 'Sushi', 'Salmon Nigiri with soy sauce', 'https://izzycooking.com/wp-content/uploads/2020/10/Salmon-Nigiri-1.jpg', 'Salmon Nigiri', 8, 2),
+(13, 150, 'Sushi', 'Spicy tuna roll with avocado and cucumber', 'https://www.tiger-corporation.com/wp-content/uploads/2023/02/hero-img-recipe-spicy-tuna-3db6e125056f2bde01321a3da5d290da.jpg', 'Spicy Tuna Roll', 10, 2),
+(14, 100, 'Drinks', 'Green tea served hot', '', 'Green Tea', 2, 2),
+(15, 250, 'Desserts', 'Mochi ice cream with red bean filling', 'https://www.rainbownourishments.com/wp-content/uploads/2023/06/vegan-strawberry-mochi-ice-cream-1.jpg', 'Mochi Ice Cream', 4, 2),
+(16, 220, 'Sushi', 'Yellowtail Sashimi with ponzu sauce', 'https://honest-food.net/wp-content/uploads/2022/08/hamachi-sashimi.jpg', 'Yellowtail Sashimi', 14, 3),
+(17, 180, 'Sushi', 'Dragon roll with eel and avocado', 'https://www.justonecookbook.com/wp-content/uploads/2020/06/Dragon-Roll-0293-II.jpg', 'Dragon Roll', 16, 3),
+(18, 300, 'Desserts', 'Tempura ice cream with chocolate drizzle', 'https://www.thespruceeats.com/thmb/DD08BlbajUwkaUB8A-1za_ejf_g=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/fried-ice-cream-recipe-5181226-hero-01-56bf6505360c407998eece1b97865a96.jpg', 'Tempura Ice Cream', 7, 3),
+(19, 150, 'Drinks', 'Cold matcha latte with soy milk', 'https://www.foodandwine.com/thmb/JoA2p5STHS8aO2nmyrwYKRojEc0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Iced-Matcha-Latte-FT-RECIPE0622-2000-9c2e116d3bc54bdaacda10e62e8e0205.jpg', 'Matcha Latte', 5, 3);
+
+
 
 
 --
